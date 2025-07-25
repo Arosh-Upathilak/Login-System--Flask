@@ -1,0 +1,19 @@
+<!-- templates/task_detail.html -->
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>Task Details</title>
+{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <h2>Task Details</h2>
+
+        <p><strong>ID:</strong> {{ task.id }}</p>
+        <p><strong>Content:</strong> {{ task.content }}</p>
+        <p><strong>Status:</strong> {{ 'Complete' if task.complete else 'Incomplete' }}</p>
+        <p><strong>Created At:</strong> {{ task.created.strftime('%Y-%m-%d %H:%M') }}</p>
+
+        <a href="/">← Back to all tasks</a>
+    </div>
+{% endblock %}
